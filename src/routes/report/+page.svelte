@@ -1,7 +1,14 @@
 <script>
+    const Assitance = {
+      Organisateur: "Organisateur",
+      Benevole:"Benevole",
+      Securite:"Securite",
+      PremierSoins:"PremierSoins"
+    }
+
     let name = '';
     let description = '';
-    let typeOfAssistance = '';
+    let typeOfAssistance = Assitance.Benevole;
   
     /**
    * @param {{ preventDefault: () => void; }} event
@@ -24,12 +31,10 @@
     <textarea id="description" bind:value={description} required></textarea>
   
     <label for="type-of-assistance">Type d'assistance:</label>
-    <select id="type-of-assistance" bind:value={typeOfAssistance} required>
-      <option value="">--Choisir--</option>
-      <option value="organisateur">Organisateur</option>
-      <option value="benevole">Bénévole</option>
-      <option value="securite">Sécurité</option>
-      <option value="premierSoin">Premier Soins</option>
+    <select bind:value={typeOfAssistance}>
+      {#each Object.keys(Assitance) as key}
+        <option value={key}>{key}</option>
+      {/each}
     </select>
   
     <button type="submit">Envoyer</button>
