@@ -20,9 +20,18 @@
     }
   </script>
   
-  <a href="/report">report</a>
-  <a href="/report/history">history</a>
+  <nav>
+    <ul>
+      <li>
+        <a href="/report">report</a>
+      </li>
+      <li>
+        <a href="/report/history">history</a>
+      </li>
+    </ul>
+  </nav>
 
+  
   <form on:submit={handleSubmit}>
     <label for="name">Nom:</label>
     <input type="text" id="name" bind:value={name} required>

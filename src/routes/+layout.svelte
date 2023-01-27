@@ -2,16 +2,24 @@
 import "@skeletonlabs/skeleton/styles/all.css";
 import "@skeletonlabs/skeleton/themes/theme-skeleton.css";
 import "../app.postcss";
+// import { PrismaClient } from "@prisma/client";
+
 let showMenu = false;
-let showCompteMenu = false;
 
 function toggleMenu() {
     showMenu = !showMenu;
 }
 
-function toggleCompteMenu(){
-    showCompteMenu = !showCompteMenu;
-}
+// TODO trigger insert data dans la bd
+// const prisma = new PrismaClient()
+
+// prisma.$on('create', (model, data) => {
+//   if (model === 'Item') {
+//     // Envoyer une notification pour informer que de nouveaux éléments ont été ajoutés
+//     sendNotification(data)
+//   }
+// })
+
 </script>
 
 <h3 id="title">Titre</h3>
