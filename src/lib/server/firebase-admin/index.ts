@@ -1,4 +1,4 @@
-import { apps, credential } from "firebase-admin";
+import firebaseAdmin from "firebase-admin";
 import { initializeApp, type App, type ServiceAccount } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 
@@ -14,9 +14,9 @@ const serviceAccount = JSON.parse(
 
 let app!: App;
 
-if (apps.length === 0) {
+if (firebaseAdmin.apps.length === 0) {
   app = initializeApp({
-    credential: credential.cert(serviceAccount),
+    credential: firebaseAdmin.credential.cert(serviceAccount),
   });
 }
 
