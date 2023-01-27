@@ -11,6 +11,16 @@ export const load = (async ({ locals, params }) => {
       label: I18N.NAVBAR.USERS_ITEM,
       organisator: true,
     },
+    {
+      path: `/${getCurrentLanguage(params.lang)}/lost-found`,
+      label: I18N.NAVBAR.LOST_AND_FOUND,
+      organisator: true,
+    },
+    {
+      path: `/${getCurrentLanguage(params.lang)}/list-task`,
+      label: I18N.NAVBAR.LIST_TASK,
+      organisator: true,
+    },
   ] satisfies Link[];
 
   return {
