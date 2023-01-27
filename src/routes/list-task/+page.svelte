@@ -26,6 +26,9 @@ let addItem = () => {
     endTime: data.endTime,
   };
   $tasks = $tasks.concat(newItem);
+
+  // TODO add data in database
+  
   data = {
     name: "",
     description: "",
