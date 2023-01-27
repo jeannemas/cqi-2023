@@ -12,7 +12,7 @@ export let name;
 /**
  * @type {String}
  */
-export let desciption;
+export let description;
 /**
  * @type {String}
  */
@@ -35,7 +35,7 @@ let deleteItem = () => {
 
 <tr>
   <td>{name}</td>
-  <td>{desciption}</td>
+  <td>{description}</td>
   <td>{date}</td>
   <td>{time}</td>
   <td>
