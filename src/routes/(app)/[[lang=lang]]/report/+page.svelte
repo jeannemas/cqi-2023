@@ -2,9 +2,11 @@
     import { page } from "$app/stores";
 
     import { i18n, type I18N } from "$lib/i18n";
-    import type { PageServerData } from "./$types";
 
-    export let data: PageServerData;
+    let data = [{ name: 'Probleme de nourriture', description: 'Manque des repas pour des participants', reportType: 'ORGANISATEUR' },
+      { name: 'Colis inconnu', description: 'Un colis a été trouvé devant une porte depuis 3h',  reportType: 'SECURITE' },
+      { name: 'Problème de connexion', description: 'Problème de connexion',  reportType: 'BENEVOLE' }
+    ];
 
     let I18N: I18N;
     let types: I18N["REPORT"]["TYPES"];
@@ -77,10 +79,11 @@
         <tr>
           <th>{I18N.REPORT.NAME}</th>
           <th>{I18N.REPORT.DESCRIPTION}</th>
+          <th>TYPE</th>
         </tr>
       </thead>
       <tbody>
-        {#each data.reports as problem}
+        {#each data as problem}
           <tr>
             <td>{problem.name}</td>
             <td>{problem.description}</td>
