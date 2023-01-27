@@ -1,9 +1,10 @@
 <script>
 import Item from "../../lib/components/lost-found/item.svelte";
 import { lostFoundItems } from "../../lib/module/lost-found";
+
 let data = {
   name: "",
-  desciption: "",
+  description: "",
   date: "",
   time: "",
   id: null,
@@ -18,14 +19,14 @@ let addItem = () => {
     const newItem = {
       id: $lostFoundItems.length + 1,
       name: data.name,
-      desciption: data.desciption,
+      description: data.description,
       date: data.date,
       time: data.time,
     };
     $lostFoundItems = $lostFoundItems.concat(newItem);
     data = {
       name: "",
-      desciption: "",
+      description: "",
       date: "",
       time: "",
       id: null,
@@ -36,7 +37,7 @@ let addItem = () => {
 let valideData = () => {
   isDataValid =
     data.date.length != 0 &&
-    data.desciption.length != 0 &&
+    data.description.length != 0 &&
     data.name.length != 0 &&
     data.time.length != 0;
 };
@@ -69,7 +70,7 @@ let valideData = () => {
       {#each $lostFoundItems as item}
         {#if search.length == 0 || item.name
             .toLowerCase()
-            .includes(search.toLowerCase()) || item.desciption
+            .includes(search.toLowerCase()) || item.description
             .toLowerCase()
             .includes(search.toLowerCase()) || item.date
             .toLowerCase()
@@ -79,7 +80,7 @@ let valideData = () => {
           <Item
             id="{item.id}"
             name="{item.name}"
-            desciption="{item.desciption}"
+            description="{item.description}"
             date="{item.date}"
             time="{item.time}"
           />
@@ -154,7 +155,7 @@ let valideData = () => {
                 name="description"
                 autocomplete="description"
                 placeholder="description de l'objet"
-                bind:value="{data.desciption}"
+                bind:value="{data.description}"
                 required
               />
             </div>

@@ -16,14 +16,26 @@ export let description;
 /**
  * @type {String}
  */
-export let date;
+export let volonteer;
 /**
  * @type {String}
  */
-export let time;
+export let startDate;
+/**
+ * @type {String}
+ */
+export let startTime;
+/**
+ * @type {String}
+ */
+export let endDate;
+/**
+ * @type {String}
+ */
+export let endTime;
 
 let deleteItem = () => {
-  var index =  $lostFoundItems
+  var index = $lostFoundItems
     .map((x) => {
       return x.id;
     })
@@ -36,8 +48,11 @@ let deleteItem = () => {
 <tr>
   <td>{name}</td>
   <td>{description}</td>
-  <td>{date}</td>
-  <td>{time}</td>
+  <td>{volonteer}</td>
+  <td>{startDate}</td>
+  <td>{startTime}</td>
+  <td>{endDate}</td>
+  <td>{endTime}</td>
   <td>
     <label
       for="my-modal-found"
