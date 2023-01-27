@@ -49,8 +49,11 @@ const FR = {
   NAVBAR: {
     USERS_ITEM: "Utilisateurs",
     MY_ACCOUNT_ITEM: "Mon compte",
+<<<<<<< HEAD
     LOST_AND_FOUND: "Object perdu",
     LIST_TASK: "Liste de tâche",
+=======
+>>>>>>> 0c6cf8f (WIP)
     LOGOUT_ITEM: "Me déconnecter",
     CHANGE_LANGUAGE_ITEM: "Changer de langue",
   },
