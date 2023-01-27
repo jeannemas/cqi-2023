@@ -3,3 +3,65 @@ html,
 body {
   @apply h-full overflow-hidden;
 }
+
+#title {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-menu {
+  display: none;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  padding: 0 1em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 600px) {
+  button {
+    display: block;
+  }
+
+  
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  padding: 0 1em;
+}
+
+  .menu {
+    display: none;
+  }
+
+  .open {
+    display: flex;
+  }
+}
