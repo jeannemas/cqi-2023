@@ -1,9 +1,10 @@
 <script>
-let modalIsOpen = false;
+import { lostFoundItems } from "../../module/lost-found";
 
-const openModal = () => (modalIsOpen = true);
-const closeModal = () => (modalIsOpen = false);
-const triggerModal = () => (modalIsOpen = !modalIsOpen);
+/**
+ * @type {Number}
+ */
+export let id;
 /**
  * @type {String}
  */
@@ -15,45 +16,57 @@ export let desciption;
 /**
  * @type {String}
  */
+export let date;
+/**
+ * @type {String}
+ */
 export let time;
+
+let deleteItem = () => {
+  var index =  $lostFoundItems
+    .map((x) => {
+      return x.id;
+    })
+    .indexOf(id);
+  $lostFoundItems.splice(index, 1);
+  $lostFoundItems = $lostFoundItems;
+};
 </script>
 
 <tr>
   <td>{name}</td>
   <td>{desciption}</td>
+  <td>{date}</td>
   <td>{time}</td>
-  <td
-    ><button
-      id="btn"
-      class="btn"
-      on:click="{() => triggerModal()}">Trouvé</button
-    ></td
-  >
+  <td>
+    <label
+      for="my-modal-found"
+      class="btn">Trouvé</label
+    >
+  </td>
 </tr>
 
-<div
-  class="modal"
-  class:is-active="{modalIsOpen}"
->
-  <div class="modal-background"></div>
-
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Modal title</p>
-
-      <button
-        class="delete"
-        aria-label="close"></button>
-    </header>
-
-    <section class="modal-card-body">
-      <!-- Content ... -->
-    </section>
-
-    <footer class="modal-card-foot">
-      <button class="button is-success"> Save changes </button>
-
-      <button class="button"> Cancel </button>
-    </footer>
+<input
+  type="checkbox"
+  id="my-modal-found"
+  class="modal-toggle"
+/>
+<div class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Est-ce que {name} a bien été trouvé?</h3>
+    <div class="modal-action">
+      <label
+        for="my-modal-found"
+        class="btn">Non</label
+      >
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <label
+        for="my-modal-found"
+        class="btn"
+        on:click="{() => {
+          deleteItem();
+        }}">Oui</label
+      >
+    </div>
   </div>
 </div>
