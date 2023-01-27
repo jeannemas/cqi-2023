@@ -26,7 +26,6 @@ let addItem = () => {
     endTime: data.endTime,
   };
   $tasks = $tasks.concat(newItem);
-  console.log($tasks);
   data = {
     name: "",
     description: "",
