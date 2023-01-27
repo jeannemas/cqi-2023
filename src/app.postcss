@@ -10,7 +10,7 @@ body {
 
 nav {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
 }
 
@@ -37,6 +37,29 @@ a {
   color: inherit;
 }
 
+
+.btn-compte:hover {
+  background-color: blue;
+}
+.dropdown {
+    position: relative;
+}
+.dropdown-child {
+    display: none;
+    position: relative;
+    background-color: skyblue;
+    min-width: 200px;
+    z-index:2;
+}
+.dropdown-child a {
+    color: blue;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-child {
+    display: block;
+}
 @media (max-width: 600px) {
   button {
     display: block;
