@@ -9,6 +9,8 @@ const EN = {
   NAVBAR: {
     USERS_ITEM: "Users",
     MY_ACCOUNT_ITEM: "My Account",
+    LOST_AND_FOUND: "Lost and found",
+    LIST_TASK: "Task list",
     LOGOUT_ITEM: "Logout",
     CHANGE_LANGUAGE_ITEM: "Change Language",
   },
@@ -47,6 +49,8 @@ const FR = {
   NAVBAR: {
     USERS_ITEM: "Utilisateurs",
     MY_ACCOUNT_ITEM: "Mon compte",
+    LOST_AND_FOUND: "Object perdu",
+    LIST_TASK: "Liste de tâche",
     LOGOUT_ITEM: "Me déconnecter",
     CHANGE_LANGUAGE_ITEM: "Changer de langue",
   },

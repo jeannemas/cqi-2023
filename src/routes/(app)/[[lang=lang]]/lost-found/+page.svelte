@@ -1,6 +1,6 @@
 <script>
-import Item from "../../lib/components/lost-found/item.svelte";
-import { lostFoundItems } from "../../lib/module/lost-found";
+import Item from "../../../../lib/components/lost-found/item.svelte";
+import { lostFoundItems } from "../../../../lib/module/lost-found";
 
 let data = {
   name: "",
