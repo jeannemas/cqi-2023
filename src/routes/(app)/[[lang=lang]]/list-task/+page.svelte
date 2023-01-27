@@ -1,7 +1,7 @@
 <script>
-import Item from "../../lib/components/task/item.svelte";
-import { tasks } from "../../lib/module/task";
-import { volonteers } from "../../lib/module/volonteer";
+import Item from "../../../../lib/components/task/item.svelte";
+import { tasks } from "../../../../lib/module/task";
+import { volonteers } from "../../../../lib/module/volonteer";
 
 let data = {
   name: "",
