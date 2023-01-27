@@ -1,23 +1,15 @@
 <script lang="ts">
-import type { User } from "@prisma/client";
-
 import { page } from "$app/stores";
 import UserEditor from "$lib/components/user-editor/UserEditor.svelte";
 import { i18n, type I18N } from "$lib/i18n";
 
 import type { PageServerData } from "./$types";
 
-type Payload = Partial<User>;
-
 export let data: PageServerData;
 
 let I18N: I18N;
 
 $: I18N = i18n($page.params.lang);
-
-function submit(userDetails: Payload) {
-  console.log(userDetails);
-}
 </script>
 
 <svelte:head>
@@ -58,6 +50,10 @@ function submit(userDetails: Payload) {
 </div>
 
 <UserEditor
+  user="{{
+    email: '',
+    name: '',
+    role: 'VOLUNTEER',
+  }}"
   submitButtonText="{I18N.UTILS.CREATE}"
-  on:submit="{({ detail }) => submit(detail)}"
 />

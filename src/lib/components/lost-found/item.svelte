@@ -1,33 +1,14 @@
-<script>
+<script lang="ts">
 import { lostFoundItems } from "../../module/lost-found";
 
-/**
- * @type {Number}
- */
-export let id;
-/**
- * @type {String}
- */
-export let name;
-/**
- * @type {String}
- */
-export let description;
-/**
- * @type {String}
- */
-export let date;
-/**
- * @type {String}
- */
-export let time;
+export let id: number;
+export let name: string;
+export let description: string;
+export let date: string;
+export let time: string;
 
 let deleteItem = () => {
-  var index =  $lostFoundItems
-    .map((x) => {
-      return x.id;
-    })
-    .indexOf(id);
+  var index = $lostFoundItems.map(({ id }: any) => id).indexOf(id);
   $lostFoundItems.splice(index, 1);
   $lostFoundItems = $lostFoundItems;
 };

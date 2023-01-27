@@ -1,23 +1,30 @@
 <script lang="ts">
-import type { User } from "@prisma/client";
-import { createEventDispatcher } from "svelte";
+import type { Prisma } from "@prisma/client";
 
 import { page } from "$app/stores";
 import { i18n, type I18N } from "$lib/i18n";
 
-type Payload = Partial<User>;
-
-export let user: Payload = {};
+export let user: Omit<Prisma.UserUncheckedCreateInput, "id" | "firebaseUid">;
 export let submitButtonText: string;
 
-const dispatch = createEventDispatcher();
-
+let form: HTMLFormElement;
 let I18N: I18N;
 let roles: I18N["USERS"]["ROLES"];
 
 $: {
   I18N = i18n($page.params.lang);
   roles = I18N.USERS.ROLES;
+}
+
+function submit(event: MouseEvent) {
+  if (!form.checkValidity()) {
+    form.requestSubmit();
+
+    return event.preventDefault();
+  }
+
+  form.submit();
+  form.reset();
 }
 </script>
 
@@ -28,7 +35,11 @@ $: {
 />
 
 <div class="modal">
-  <div class="modal-box">
+  <form
+    class="modal-box"
+    method="post"
+    bind:this="{form}"
+  >
     <div class="form-control w-full max-w-xs">
       <label
         class="label"
@@ -80,6 +91,7 @@ $: {
       <select
         class="select select-bordered"
         bind:value="{user.role}"
+        name="role"
       >
         {#each Object.entries(roles) as [key, label]}
           <option value="{key}">
@@ -101,8 +113,9 @@ $: {
       <label
         for="user-editor-modal"
         class="btn btn-primary"
-        on:click="{() => dispatch('submit', user)}">{submitButtonText}</label
-      >
+        on:click="{submit}"
+        >{submitButtonText}
+      </label>
     </div>
-  </div>
+  </form>
 </div>

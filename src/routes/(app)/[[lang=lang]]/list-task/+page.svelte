@@ -1,7 +1,7 @@
 <script>
-import Item from "../../../../lib/components/task/item.svelte";
-import { tasks } from "../../../../lib/module/task";
-import { volonteers } from "../../../../lib/module/volonteer";
+import Item from "$lib/components/task/item.svelte";
+import { tasks } from "$lib/module/task";
+import { volonteers } from "$lib/module/volonteer";
 
 let data = {
   name: "",
@@ -25,7 +25,13 @@ let addItem = () => {
     endDate: data.endDate,
     endTime: data.endTime,
   };
-  $tasks = $tasks.concat(newItem);
+  console.log(newItem);
+
+  tasks.set([...$tasks, newItem]);
+  // $tasks = $tasks.concat(newItem);
+
+  // TODO add data in database
+
   data = {
     name: "",
     description: "",
