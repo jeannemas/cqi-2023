@@ -40,6 +40,9 @@
   "type": "module",
   "dependencies": {
     "@prisma/client": "^4.9.0",
-    "daisyui": "^2.49.0"
+    "bootstrap-icons": "^1.10.3",
+    "daisyui": "^2.49.0",
+    "firebase": "^9.16.0",
+    "firebase-admin": "^11.5.0"
   }
 }
