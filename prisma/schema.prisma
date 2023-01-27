@@ -16,4 +16,49 @@ model User {
   name        String?
   firebaseUid String  @unique
   role        String
+  tasks       Task[]
+  lostFounds  LostFound[]
+}
+
+model Event {
+  id          Int     @id @default(autoincrement())
+  name        String
+  startDate   DateTime
+  endDate     DateTime
+  tasks       Task[]
+  lostFounds  LostFound[]
+  reports     Report[]
+}
+
+model Task {
+  id          Int     @id @default(autoincrement())
+  event       Event   @relation(fields:[eventId], references:[id])
+  eventId     Int
+  name        String  @unique
+  description String?
+  startDate   DateTime
+  endDate     DateTime
+  user        User    @relation(fields:[userId], references:[id])
+  userId      Int
+}
+
+model LostFound {
+  id          Int     @id @default(autoincrement())
+  event       Event   @relation(fields:[eventId], references:[id])
+  eventId     Int
+  name        String
+  description String
+  foundTime   DateTime
+  user        User    @relation(fields:[userId], references:[id])
+  userId      Int
+  returned    Boolean
+}
+
+model Report {
+  id          Int     @id @default(autoincrement())
+  event       Event   @relation(fields:[eventId], references:[id])
+  eventId     Int
+  name        String
+  description String
+  reportType  String
 }
