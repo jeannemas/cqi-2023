@@ -21,6 +21,11 @@ export const load = (async ({ locals, params }) => {
       label: I18N.NAVBAR.LIST_TASK,
       organisator: true,
     },
+    {
+      path: `/${getCurrentLanguage(params.lang)}/report`,
+      label: I18N.NAVBAR.REPORT_ITEM,
+      organisator: false
+    },
   ] satisfies Link[];
 
   return {

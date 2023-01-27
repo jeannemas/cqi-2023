@@ -13,6 +13,7 @@ const EN = {
     LIST_TASK: "Task list",
     LOGOUT_ITEM: "Logout",
     CHANGE_LANGUAGE_ITEM: "Change Language",
+    REPORT_ITEM: "Report"
   },
 
   USERS: {
@@ -34,6 +35,20 @@ const EN = {
     EDIT: "Edit",
     CREATE: "Create",
   },
+
+  REPORT: {
+    HISTORY: "History",
+    NAME: "Name",
+    DESCRIPTION: "Description",
+    TYPEOFASSITANCE: "Type of assistance",
+    SEND: "Envoyer",
+    TYPES:{
+      ORGANISATOR:"Organisator",
+      VOLUNTEER: "Volunter",
+      SECURITY: "Security",
+      FIRSTAID: "First aid",
+    }
+  },
 };
 
 export type I18N = typeof EN;
@@ -53,6 +68,7 @@ const FR = {
     LIST_TASK: "Liste de tâche",
     LOGOUT_ITEM: "Me déconnecter",
     CHANGE_LANGUAGE_ITEM: "Changer de langue",
+    REPORT_ITEM: "Rapportage de problème"
   },
 
   USERS: {
@@ -73,6 +89,20 @@ const FR = {
     CANCEL: "Annuler",
     EDIT: "Modifier",
     CREATE: "Créer",
+  },
+
+  REPORT: {
+    HISTORY: "Historique",
+    NAME: "Nom",
+    DESCRIPTION: "Description",
+    TYPEOFASSITANCE: "Type d'assistance",
+    SEND: "Envoyer",
+    TYPES:{
+      ORGANISATOR:"Organisateur",
+      VOLUNTEER: "Bénévole",
+      SECURITY: "Sécurité",
+      FIRSTAID: "Premier soins"
+    }
   },
 } satisfies I18N;
 
