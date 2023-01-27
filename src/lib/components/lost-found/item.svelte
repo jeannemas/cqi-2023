@@ -35,7 +35,11 @@ let deleteItem = () => {
 
 <tr>
   <td>{name}</td>
+<<<<<<< HEAD
   <td>{description}</td>
+=======
+  <td>{desciption}</td>
+>>>>>>> refs/remotes/origin/report
   <td>{date}</td>
   <td>{time}</td>
   <td>
