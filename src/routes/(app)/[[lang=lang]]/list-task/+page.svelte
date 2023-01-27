@@ -145,6 +145,7 @@ let addItem = () => {
           <label for="eventTaskPerson">Personne en charge de la tâche</label>
           <select
             id="eventTaskPerson"
+            name="eventTaskPerson"
             bind:value="{data.volonteer}"
           >
             <option></option>
@@ -155,7 +156,7 @@ let addItem = () => {
 
           <div class="field">
             <label
-              for="description"
+              for="startDate"
               class="label"
             >
               Date de début de la tâche:
@@ -164,14 +165,14 @@ let addItem = () => {
               <input
                 class="input"
                 type="date"
-                id="description"
-                name="description"
+                id="startDate"
+                name="startDate"
                 bind:value="{data.startDate}"
                 required
               />
             </div>
             <label
-              for="description"
+              for="startTime"
               class="label"
             >
               Heure de début de la tâche:
@@ -180,8 +181,8 @@ let addItem = () => {
               <input
                 class="input"
                 type="time"
-                id="time"
-                name="time"
+                id="startTime"
+                name="startTime"
                 bind:value="{data.startTime}"
                 required
               />
@@ -189,7 +190,7 @@ let addItem = () => {
           </div>
           <div class="field">
             <label
-              for="description"
+              for="endDate"
               class="label"
             >
               Date de fin de la tâche:
@@ -198,14 +199,14 @@ let addItem = () => {
               <input
                 class="input"
                 type="date"
-                id="description"
-                name="description"
+                id="endDate"
+                name="endDate"
                 bind:value="{data.endDate}"
                 required
               />
             </div>
             <label
-              for="description"
+              for="endTime"
               class="label"
             >
               Heure de fin de la tâche:
@@ -214,8 +215,8 @@ let addItem = () => {
               <input
                 class="input"
                 type="time"
-                id="time"
-                name="time"
+                id="endTime"
+                name="endTime"
                 bind:value="{data.endTime}"
                 required
               />

@@ -1,46 +1,18 @@
-<script>
+<script lang="ts">
 import { tasks } from "../../module/task";
 import { volonteers } from "../../module/volonteer";
 
-/**
- * @type {Number}
- */
-export let id;
-/**
- * @type {String}
- */
-export let name;
-/**
- * @type {String}
- */
-export let description;
-/**
- * @type {String}
- */
-export let volonteer;
-/**
- * @type {String}
- */
-export let startDate;
-/**
- * @type {String}
- */
-export let startTime;
-/**
- * @type {String}
- */
-export let endDate;
-/**
- * @type {String}
- */
-export let endTime;
+export let id: number;
+export let name: string;
+export let description: string;
+export let volonteer: string;
+export let startDate: string;
+export let startTime: string;
+export let endDate: string;
+export let endTime: string;
 
 let deleteItem = () => {
-  var index = $tasks
-    .map((x) => {
-      return x.id;
-    })
-    .indexOf(id);
+  var index = $tasks.map(({ id }: any) => id).indexOf(id);
   $tasks.splice(index, 1);
   $tasks = $tasks;
 };
@@ -57,11 +29,7 @@ let data = {
 };
 
 let editItem = () => {
-  var index = $tasks
-    .map((x) => {
-      return x.id;
-    })
-    .indexOf(id);
+  var index = $tasks.map(({ id }: any) => id).indexOf(id);
   $tasks[index] = data;
   $tasks = $tasks;
 };
